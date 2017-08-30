@@ -6,6 +6,7 @@ services:
     build: ./frontend # specify the directory of the Dockerfile
     volumes:
       - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - 4200:3000 # specify port forewarding
     command: npm start
@@ -14,6 +15,7 @@ services:
     build: ./backend # specify the directory of the Dockerfile
     volumes:
       - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - "3000:3000" #specify ports forewarding
     command: npm start
