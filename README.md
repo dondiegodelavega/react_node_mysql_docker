@@ -3,8 +3,15 @@ Have your Docker installed and run:
 
 docker-compose -up --build 
 
-No local npm install is required.
+Access frontend using port 4200
+Access backend using port 3000
 
-<!-- ## Installation :
+- No local npm install is required.
+
+### acess bash
+docker-compose exec frontend bash
+docker-compose exec backend bash
+
+<!-- ## Installation for local dev env:
 1. npm install
 2. npm run postinstall -->

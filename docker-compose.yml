@@ -4,26 +4,26 @@ version: '3' # specify docker-compose version
 services:
   frontend: # name of the first service
     build: ./frontend # specify the directory of the Dockerfile
-    image: frontend_react
+    image: frontend_react:frontend
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./frontend:/usr/src/app
       - /usr/src/app/node_modules
     ports:
       - 4200:3000 # specify port forewarding
-    command: npm start
 
   backend: #name of the second service
     build: ./backend # specify the directory of the Dockerfile
-    image: backend_express
+    image: backend_express:backend
+    environment:
+      - NODE_ENV=development
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
     ports:
       - "3000:3000" #specify ports forewarding
-    command: npm start
 
   database: # name of the third service
     image: mysql # specify image to build container from
