@@ -19,11 +19,14 @@ services:
     image: backend_express:backend
     environment:
       - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
     ports:
       - "3000:3000" #specify ports forewarding
+    links:
+      - database
 
   database: # name of the third service
     image: mysql # specify image to build container from
