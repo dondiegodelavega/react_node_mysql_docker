@@ -11,6 +11,7 @@ COPY package.json /usr/src/app
 
 # Install dependecies
 RUN npm install
+RUN npm cache verify
 
 # Expose the port the app runs in
 EXPOSE 3000
