@@ -29,7 +29,7 @@ services:
       - database
 
   database: # name of the third service
-    image: mysql # specify image to build container from
+    image: mysql:5.7 # specify image to build container from
     environment:
       - "MYSQL_ROOT_PASSWORD=root"
     ports:
